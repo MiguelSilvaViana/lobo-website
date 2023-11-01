@@ -14,8 +14,8 @@ const CardHome = ({ text, img, link, highlighted }) => {
       transition={{ duration: 1.2 }}
       whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
-      className='flex flex-col p-6 w-[485px] h-[184px] bg-[#0f1411]  justify-center-center rounded items-center'>
-      <div className='flex items-center justify-center w-full h-[70%] mb-2 gap-x-3 '>
+      className='flex flex-col p-4 sm:p-6 w-[310px] h-[180px] sm:w-[485px] sm:h-[184px] bg-[#0f1411]  justify-center-center rounded items-center'>
+      <div className='flex items-center justify-center w-full h-[70%] mb-4 lg:mb-2 gap-x-3 '>
         <Image
           src={img}
           alt={img}
@@ -23,8 +23,8 @@ const CardHome = ({ text, img, link, highlighted }) => {
           height={30}
           className='-mt-[16%]'
         />
-        <p className='text-sm'>
-          <strong className='text-base'>{highlighted}</strong> {text}
+        <p className='text-xs sm:text-sm'>
+          <strong className='text-sm sm:text-base'>{highlighted}</strong> {text}
         </p>
       </div>
       <div className=' ml-16 h-[30%] w-full'>

@@ -22,9 +22,9 @@ const Vdsc = () => {
     <div
       className='flex items-center justify-center w-full h-full bg-no-repeat bg-cover'
       style={{ backgroundImage: 'url(/img/nftbg.png)' }}>
-      <div className='container flex items-center h-full gap-x-8'>
+      <div className='container flex items-center justify-center h-full px-6 gap-x-8 xl:px-0 py-36 sm:py-0'>
         {/* content */}
-        <div className='p-6 bg-black rounded bg-opacity-50 max-w-[50%] h-fit'>
+        <div className='p-4 sm:p-6 bg-black rounded bg-opacity-50 xl:max-w-[50%] h-fit w-full relative'>
           {/* logo */}
           <div className='relative'>
             <Image
@@ -33,12 +33,14 @@ const Vdsc = () => {
               width={0}
               height={0}
               sizes='100vw'
-              className={`w-[80px] h-[80px] lg:w-[100px] lg:h-[100px] xl:w-[120px] xl:h-[120px] absolute -right-[8%] -top-20 hover:animate-spin`}
+              className={`w-[80px] h-[80px] lg:w-[100px] lg:h-[100px] xl:w-[120px] xl:h-[120px] absolute lg:-right-[9%] sm:-right-[10%] sm:-top-14 lg:-top-20 hover:animate-spin -right-[14%] -top-14`}
             />
           </div>
           {/* content */}
           <div className='flex flex-col flex-1 gap-y-4'>
-            <h2 className='mb-4 text-4xl '>Volted Dragons Sailors Club</h2>
+            <h2 className='mb-4 text-2xl xl:text-4xl '>
+              Volted Dragons Sailors Club
+            </h2>
 
             <p className='tracking-wide'>
               The Volted Dragons Sailors Club (VDSC) is the Volt Inu official
@@ -53,16 +55,16 @@ const Vdsc = () => {
               member of the VDSC.
             </p>
 
-            <div className='flex gap-x-4'>
+            <div className='flex flex-col items-center gap-x-4 sm:flex-row xl:gap-y-0 gap-y-4'>
               <Link
-                className='px-6 py-3 bg-[#dcf14f] text-black rounded-lg hover:bg-[#1c2922] hover:text-white hover:border-[#dcf14f] hover:border-opacity-100 transition-all duration-200 hover:scale-105 border-opacity-0 font-semibold'
+                className='px-6 py-3 bg-[#dcf14f] text-black rounded-lg hover:bg-[#1c2922] hover:text-white hover:border-[#dcf14f] hover:border-opacity-100 transition-all duration-200 hover:scale-105 border-opacity-0 font-semibold w-fit'
                 href='https://opensea.io/collection/volteddragonssailorsclub '
                 target='_blank'>
                 VIEW COLLECTION
               </Link>
 
               <Link
-                className='px-6 py-3  rounded-lg bg-transparent hover:bg-[#dcf14f] text-white hover:text-black border-[#dcf14f] border transition-all duration-200 hover:scale-105  font-semibold'
+                className='px-6 py-3  w-fit rounded-lg bg-transparent hover:bg-[#dcf14f] text-white hover:text-black border-[#dcf14f] border transition-all duration-200 hover:scale-105  font-semibold'
                 href='https://volteddragons.com/'
                 target='_blank'>
                 VIEW WEBSITE

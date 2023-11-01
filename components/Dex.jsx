@@ -7,53 +7,52 @@ const Dex = () => {
 
   return (
     <div
-      className='relative flex items-center justify-center w-full h-full bg-white bg-right-top bg-no-repeat bg-contain py-36'
+      className='relative flex items-center justify-center w-full h-full py-10 bg-white bg-right-top bg-no-repeat bg-contain sm:py-20 lg:py-36 bg-none lg:bg-phones'
       style={{
-        backgroundImage: 'url(/img/phones.png)',
         backgroundPosition: 'right top',
         backgroundPositionX: '1200px',
       }}>
-      <div className='container relative min-h-full px-32 '>
+      <div className='container relative min-h-full px-6 sm:px-14 lg:px-32 '>
         <p className='text-2xl text-[#a2b238]'>The number one DEX</p>
         <h2 className='text-4xl text-black truncate lg:mb-4 voltichange_text:text-[50px] voltichange_text:leading-14 py-4'>
           VoltiChange
         </h2>
-        <p className='text-black max-w-[700px]'>
+        <p className='text-black w-full xl:max-w-[700px]'>
           Our DEX allows projects to get listed in a free and permissionless way
           and makes them become deflationary by burning their supply.
         </p>
 
-        <div className='flex flex-col mt-10 text-black'>
-          <div className='flex items-center justify-start mb-4 text-xl '>
+        <div className='flex flex-col items-start justify-start mt-10 text-black'>
+          <div className='flex items-center justify-start mb-4 text-xs sm:text-lg xl:text-xl '>
             <input
               type='checkbox'
               checked={true}
               readOnly
               className='accent-[#a2b238] w-[22px] h-[22px] justify-center items-center mt-1'
             />
-            <label className='pl-2 text-center tab:text-2xl mob:text-lg'>
+            <label className='pl-0.5 lg:pl-2 text-center'>
               No <strong>liquidity</strong> to add
             </label>
           </div>
-          <div className='flex items-center justify-start mb-4 text-xl'>
+          <div className='flex items-center justify-start mb-4 text-xs sm:text-lg xl:text-xl'>
             <input
               type='checkbox'
               checked={true}
               readOnly
-              className='accent-[#a2b238] w-[22px] h-[22px] justify-center items-center mt-1'
+              className='accent-[#a2b238] min-w-[22px] min-h-[22px] justify-center items-center mt-1'
             />
-            <label className='pl-2 text-center tab:text-2xl mob:text-lg'>
+            <label className='pl-0.5 lg:pl-2 text-center '>
               <strong>0.25% fee burning</strong> your supply while trading
             </label>
           </div>
-          <div className='flex items-center justify-start mb-4 text-xl'>
+          <div className='flex items-center justify-center mb-4 text-xs sm:text-base xl:text-xl'>
             <input
               type='checkbox'
               checked={true}
               readOnly
-              className='accent-[#a2b238] w-[22px] h-[22px] justify-center items-center mt-1'
+              className='accent-[#a2b238] min-w-[22px] min-h-[22px] justify-center items-center mt-1'
             />
-            <label className='pl-2 text-center tab:text-2xl mob:text-lg'>
+            <label className='pl-0.5 lg:pl-2 text-center '>
               A fully{' '}
               <Link
                 href='https://voltichange.net/widget'
@@ -67,7 +66,7 @@ const Dex = () => {
 
           <div className='mt-4'>
             <Link
-              className='px-4 py-3 bg-[#687321] text-white font-semibold flex rounded-lg mt-4 cursor-pointer hover:scale-105 transition-all duration-200 text-xl gap-x-2 w-[400px] items-center justify-center'
+              className='px-3 py-2 lg:px-4 lg:py-3 bg-[#687321] text-white font-semibold flex rounded-lg mt-4 cursor-pointer hover:scale-105 transition-all duration-200 lg:text-xl text-base gap-x-2 w-full sm:w-[400px] items-center justify-center'
               href='https://voltichange.net/'
               target='_blank'>
               <svg

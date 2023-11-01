@@ -5,7 +5,7 @@ import { useI18n } from '../locales/client';
 
 const ButtonNeon = ({ text, href }) => {
   return (
-    <div className='relative z-[9999] neon rounded'>
+    <div className='relative z-[9999] neon rounded border-[#dcf14f] border xl:border-none'>
       <Link
         className='relative'
         href={href}
@@ -25,6 +25,7 @@ const Nav = () => {
   const t = useI18n();
 
   const [activeSection, setActiveSection] = useState('home');
+  const [openMenu, setOpenMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,54 +47,59 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className='relative flex items-center justify-center font-semibold text-white gap-x-10'>
-      <ul className='flex items-center justify-center text-base text-white bg-transparent 2xl:text-lg gap-x-8 2xl:gap-x-10'>
-        <li className='relative'>
+    <nav className='flex items-center justify-center w-full font-semibold text-white gap-x-10'>
+      <button
+        className={` ${openMenu ? 'toggle active' : 'toggle'}`}
+        onClick={() => setOpenMenu(!openMenu)}>
+        <span></span>
+      </button>
+
+      <ul
+        className={`items-center   justify-center  text-base text-white  xl:flex 2xl:text-lg gap-x-8 2xl:gap-x-10 ${
+          openMenu
+            ? 'flex flex-col absolute  top-[60px] w-screen min-full text-center bg-opacity-100  bg-black -left-2 sm:-left-10'
+            : 'hidden bg-transparent'
+        }`}>
+        <li className={` ${activeSection === 'home' ? 'active ' : ''}`}>
           <Link
             href='#home'
-            className={`nav-item ${
-              activeSection === 'home' ? 'nav-item-active' : ''
-            }`}>
+            className={`nav-item ${activeSection === 'home' ? 'active ' : ''}`}>
             {t('Home')}
           </Link>
         </li>
-        <li className='relative'>
+        <li className={` ${activeSection === 'tokenomics' ? 'active' : ''}`}>
           <Link
             href='#tokenomics'
             className={`nav-item ${
-              activeSection === 'tokenomics' ? 'nav-item-active' : ''
+              activeSection === 'tokenomics' ? 'active' : ''
             }`}>
             {t('Tokenomics')}
           </Link>
         </li>
-        <li className='relative'>
+        <li className={` ${activeSection === 'roadmap' ? 'active' : ''}`}>
           <Link
             href='#roadmap'
             className={`nav-item ${
-              activeSection === 'roadmap' ? 'nav-item-active' : ''
+              activeSection === 'roadmap' ? 'active' : ''
             }`}>
             {t('Roadmap')}
           </Link>
         </li>
-        <li className='relative'>
+        <li className={`${activeSection === 'news' ? 'active' : ''}`}>
           <Link
             href='#news'
-            className={`nav-item ${
-              activeSection === 'news' ? 'nav-item-active' : ''
-            }`}>
+            className={`nav-item ${activeSection === 'news' ? 'active' : ''}`}>
             {t('News')}
           </Link>
         </li>
-        <li className='relative'>
+        <li className={` ${activeSection === 'vdsc' ? 'active' : ''}`}>
           <Link
             href='#vdsc'
-            className={`nav-item ${
-              activeSection === 'vdsc' ? 'nav-item-active' : ''
-            }`}>
+            className={`nav-item ${activeSection === 'vdsc' ? 'active' : ''}`}>
             {t('Vdsc')}
           </Link>
         </li>
-        <li className='relative'>
+        <li>
           <Link
             href='https://voltinu.in/voltinu_dashboard/index.html'
             className='nav-item'
@@ -101,7 +107,7 @@ const Nav = () => {
             {t('Dashboard')}
           </Link>
         </li>
-        <li className='relative'>
+        <li>
           <ButtonNeon text='VoltiCard' href={'https://volticard.net/'} />
         </li>
       </ul>

@@ -36,16 +36,21 @@ const Wolf = async () => {
 
   return (
     <div className='relative flex items-center justify-center w-full h-full overflow-hidden '>
-      <div className='container z-10 flex flex-col items-start justify-center h-full px-24 py-32'>
-        <h1 className='relative text-6xl font-semibold leading-relaxed'>
+      {/* wolf logo */}
+      <div className='absolute inset-0 bottom-0 left-[80%] lg:left-[50%]  w-screen min-h-full'>
+        <WolfAvatar />
+      </div>
+
+      <div className='container z-10 flex flex-col items-start justify-center h-full px-10 py-32 sm:px-24'>
+        <h1 className='relative text-4xl font-semibold leading-relaxed lg:text-5xl xl:text-6xl'>
           <span className='text-[#687321]'>Volt Inu</span>
           <br />
-          <span className='text-[#dcf14f] after:content-[""] after:absolute after:w-[16%] after:bg-white after:h-1 after:rounded after:top-[92%] after:left-2'>
+          <span className='text-[#dcf14f] after:content-[""] after:absolute after:w-[26%] sm:after:w-[16%] after:bg-white after:h-1 after:rounded xl:after:top-[96%] after:left-2 after:top-[98%]'>
             The People's Crypto
           </span>
         </h1>
 
-        <div className='mt-2 max-w-[36rem]'>
+        <div className='mt-4 xl:mt-2 max-w-[36rem]'>
           <p>
             Volt Inu is an ecosystem aimed at becoming a one-stop shop offering
             DeFi products while bringing profits back to the native token to
@@ -53,11 +58,11 @@ const Wolf = async () => {
           </p>
         </div>
 
-        <div className='mt-8 mb-6'>
+        <div className='mt-6 mb-6 xl:mt-8'>
           <p className='text-[#c5d845]'>Our ecosystem</p>
         </div>
 
-        <div className='grid grid-cols-1 gap-4 xl:grid-cols-2'>
+        <div className='grid items-center justify-center grid-cols-1 gap-4 xl:grid-cols-2'>
           {cards.map((item, index) => {
             return (
               <CardHome
@@ -69,13 +74,6 @@ const Wolf = async () => {
               />
             );
           })}
-        </div>
-      </div>
-
-      {/* wolf logo */}
-      <div className='absolute bottom-0 left-0 w-full min-h-full'>
-        <div className='absolute w-full min-h-full -bottom-32 lg:bottom-0 left-[50%]'>
-          <WolfAvatar />
         </div>
       </div>
     </div>

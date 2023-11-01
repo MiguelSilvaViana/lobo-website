@@ -67,10 +67,14 @@ const NewsSection = () => {
   ];
 
   return (
-    <div className='flex flex-col items-center justify-center w-full h-full py-0 overflow-hidden xl:py-12 2xl:py-20'>
+    <div className='flex flex-col items-center justify-center w-full h-full py-10 overflow-hidden xl:py-12 2xl:py-20'>
       <div className='text-[#1b2d25] text-center'>
-        <h4 className='mb-2 text-8xl'>Volt Inu in the News</h4>
-        <p className='text-4xl'>See who's writing about us</p>
+        <h4 className='mb-2 text-5xl lg:text:6xl xl:text-8xl'>
+          Volt Inu in the News
+        </h4>
+        <p className='text-2xl lg:text-3xl xl:text-4xl'>
+          See who's writing about us
+        </p>
       </div>
       <div className='container grid grid-cols-1 gap-6 p-10 lg:grid-cols-2 -full'>
         {newsTrend.map((item, index) => {

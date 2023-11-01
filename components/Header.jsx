@@ -14,8 +14,8 @@ const Header = async () => {
 
   return (
     <>
-      <header className='fixed w-full  py-3 bg-[rgb(20,33,27)] opacity-90 mx-auto flex items-center justify-center px-20 z-50'>
-        <div className='relative flex items-center justify-between w-full 2xl:gap-x-6 gap-x-4'>
+      <header className='fixed w-screen  py-3 bg-[rgb(20,33,27)]  xl:opacity-90 mx-auto flex items-center justify-center px-2 sm:px-10 xl:px-20 z-50 max-h-[90px]'>
+        <div className='relative flex items-center justify-between min-w-full 2xl:gap-x-6 gap-x-4 '>
           {/* logo */}
           <Link href='/' className='h-[3rem] relative flex items-center'>
             <Image
@@ -23,12 +23,14 @@ const Header = async () => {
               alt='logo'
               width={537}
               height={167}
-              className=' max-w-[190px] max-h-[100px] -mt-1'
+              className='xl:max-w-[190px] xl:max-h-[100px] -mt-1 sm:max-w-[140px] sm:max-h-[100px] max-h-[100px] max-w-[120px]'
               priority={true}
             />
           </Link>
+
           {/* navigation */}
           <Nav />
+
           {/* change Language */}
           <ChangeLanguage />
         </div>

@@ -3,29 +3,41 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-const IconCard = ({ percentage, text, img }) => {
+const IconCard = ({ percentage, text, img, changeClassWithNetwork }) => {
   return (
     <>
-      <div className='flex flex-col items-center justify-center'>
-        <div className='sm:w-[110px] sm:h-[110px] mb-2 bg-white rounded-full flex justify-center items-center lg:w-[85px] lg:h-[85px] p-3 w-[50px] h-[50px]'>
-          <Image src={img} alt={img} width={80} height={70} />
+      <div
+        className={`flex flex-col items-center justify-center ${changeClassWithNetwork}`}>
+        <div className='sm:w-[70px] sm:h-[70px] xl:w-[80px] xl:h-[80px] mb-2 bg-white rounded-full flex justify-center items-center lg:w-[85px] lg:h-[85px] p-3 w-[50px] h-[50px] '>
+          <Image
+            src={img}
+            alt={img}
+            width={0}
+            height={0}
+            sizes='100vw'
+            className='w-full h-full'
+          />
         </div>
-        <p className='text-[#dcf14f] text-sm sm:text-base'>{text}</p>
-        <p className='text-xl text-white sm:text-4xl'>{percentage}</p>
+        <p className='text-[#dcf14f] text-sm sm:text-base text-center'>
+          {text}
+        </p>
+        <p className='text-xl text-center text-white sm:text-4xl'>
+          {percentage}
+        </p>
       </div>
     </>
   );
 };
 
+// { text: 'Liquidity Pool', percentage: '2%', img: '/img/icon2.png' },
+// {
+//   text: 'Burns',
+//   percentage: '2%',
+//   img: '/img/icon3.png',
+//   bscPercentage: '4%',
+// },
 const icons = [
   { text: 'Reflections', percentage: '1%', img: '/img/icon1.png' },
-  { text: 'Liquidity Pool', percentage: '2%', img: '/img/icon2.png' },
-  {
-    text: 'Burns',
-    percentage: '2%',
-    img: '/img/icon3.png',
-    bscPercentage: '4%',
-  },
   { text: 'Marketing', percentage: '4%', img: '/img/icon4.png' },
   { text: 'Treasury', percentage: '4%', img: '/img/icon5.png' },
 ];
@@ -72,23 +84,23 @@ const Tokenomics = () => {
 
   return (
     <div
-      className='flex flex-col items-center justify-center w-full h-full bg-black bg-no-repeat bg-cover py-36'
+      className='flex flex-col items-center justify-center w-full h-full py-20 bg-black bg-no-repeat bg-cover sm:py-36'
       style={{
         backgroundImage: `url('/img/tokenomicsBg.png')`,
       }}>
-      <div className='container flex flex-col items-center justify-center'>
-        <div className='relative flex flex-col items-center justify-center'>
+      <div className='container flex flex-col items-center justify-center px-6 xl:px-0'>
+        <div className='relative flex flex-col items-center justify-center text-center'>
           <h2 className='text-4xl'>Our Tokenomics</h2>
-          <p className='relative text-xl after:content-[""] after:flex after:justify-center after:items-center after:w-[16%] after:bg-[#c5d845] after:h-1 after:mt-8 after:rounded after:top-[92%] after:relative after:mx-auto'>
+          <p className='relative text-base sm:text-xl after:content-[""] after:flex after:justify-center after:items-center after:w-[16%] after:bg-[#c5d845] after:h-1 after:mt-8 after:rounded after:top-[92%] after:relative after:mx-auto'>
             We are on <strong>Ethereum</strong> Blockchain,{' '}
             <strong>Binance</strong> Smart Chain and <strong>Polygon</strong>{' '}
             Chain
           </p>
         </div>
 
-        <div className='flex mt-16 mb-10 gap-x-10'>
+        <div className='relative flex mt-16 mb-10 sm:gap-x-10 gap-x-6'>
           <button
-            className={`px-6 py-2 text-2xl   rounded-full mob:text-xl mob:px-4 ${
+            className={`px-3 lg:px-4 xl:px-6 py-2 lg:text-2xl   rounded-full sm:text-lg text-base ${
               network === 'ETH'
                 ? 'bg-[#dcf14f] bg-opacity-100 text-black hover:bg-[#fffacd]'
                 : 'bg-white  bg-opacity-20 hover:bg-opacity-50 text-white'
@@ -98,7 +110,7 @@ const Tokenomics = () => {
           </button>
 
           <button
-            className={`px-6 py-2 text-2xl   rounded-full mob:text-xl mob:px-4  ${
+            className={`px-3 lg:px-4 xl:px-6 py-2 lg:text-2xl   rounded-full sm:text-lg text-base  ${
               network === 'BSC'
                 ? 'bg-[#dcf14f] bg-opacity-100 text-black hover:bg-[#fffacd]'
                 : 'bg-white  bg-opacity-20 hover:bg-opacity-50 text-white'
@@ -109,7 +121,7 @@ const Tokenomics = () => {
 
           <button
             onClick={() => handleNetworkChange('matic')}
-            className={`px-6 py-2 text-2xl   rounded-full mob:text-xl mob:px-4 ${
+            className={`px-3 lg:px-4 xl:px-6 py-2 lg:text-2xl   rounded-full sm:text-lg text-base ${
               network === 'MATIC'
                 ? 'bg-[#dcf14f] bg-opacity-100 text-black hover:bg-[#fffacd]'
                 : 'bg-white  bg-opacity-20 hover:bg-opacity-50 text-white'
@@ -119,7 +131,7 @@ const Tokenomics = () => {
         </div>
 
         {/* icons */}
-        <div className='flex items-center justify-center w-full gap-x-20 '>
+        <div className='flex flex-wrap items-center justify-center w-full gap-5 sm:gap-x-16 xl:gap-x-20 sm:gap-0'>
           {icons.map((item, index) => {
             return (
               <IconCard
@@ -130,12 +142,25 @@ const Tokenomics = () => {
               />
             );
           })}
+          <IconCard
+            img='/img/icon2.png'
+            percentage='2%'
+            text='Liquidity Pool'
+            changeClassWithNetwork={`${
+              network === 'BSC' ? 'hidden invisible' : ''
+            }`}
+          />
+          <IconCard
+            img='/img/icon3.png'
+            text='Burns'
+            percentage={network === 'BSC' ? '4%' : '2%'}
+          />
         </div>
 
         <div className='flex flex-col items-center justify-center w-full mt-10 gap-y-6'>
           <p className='text-xl'>Our Contract</p>
 
-          <div className='relative  flex px-4 py gap-x-4 py-4 bg-[#111c16] rounded-lg w-[700px] text-white items-center justify-center'>
+          <div className='relative  flex px-4 py gap-x-4 py-4 bg-[#111c16] rounded-lg w-full sm:w-[700px] text-white items-center justify-center'>
             <p className='text-xl font-bold'>{network}</p>
             <input
               type='text'
@@ -152,7 +177,7 @@ const Tokenomics = () => {
 
           <div className='flex flex-col items-center justify-center gap-y-8'>
             <Link
-              className='bg-[#dcf14f] text-black px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-x-2 hover:scale-105 transition-all duration-200'
+              className='bg-[#dcf14f] text-black px-4 py-3 sm:px-5 sm:py-3 xl:px-6 xl:py-3 rounded-lg font-semibold flex items-center justify-center gap-x-2 hover:scale-105 transition-all duration-200'
               href='https://voltichange.net/'
               target='_blank'>
               <svg
@@ -164,9 +189,9 @@ const Tokenomics = () => {
               BUY ON VOLTICHANGE
             </Link>
 
-            <div className='flex flex-col items-center justify-center gap-y-4'>
+            <div className='flex flex-col items-center justify-center w-full gap-y-4'>
               <p>Credit Cards Or Bank Transfer</p>
-              <div className='flex gap-x-4'>
+              <div className='relative flex flex-wrap items-center justify-center gap-4 sm:justify-center lg:gap-0 lg:gap-x-4'>
                 <Link
                   className='text-sm border-[#dcf14f] border rounded p-2 hover:bg-[#dcf14f] hover:text-black transition-all duration-300'
                   href='https://buy.volt.indacoin.io/'
@@ -201,5 +226,3 @@ const Tokenomics = () => {
 };
 
 export default Tokenomics;
-
-/* algumas network nao tem algumas opçoes dos icons igual o codigo original alem disso preciso verificar como esta mobile e tambem as traduçoes */

@@ -8,10 +8,72 @@
 
 @layer components {
   .nav-item {
-    @apply after:content-[""] after:absolute after:w-full after:h-0 after:top-6 after:left-0 hover:after:h-0.5 after:bg-[#dcf14f] after:mt-1.5  after:rounded after:mx-auto text-center transition-all duration-200;
+    @apply after:content-[""] after:absolute xl:after:w-full after:h-0 xl:after:top-10 xl:after:left-0 xl:hover:after:h-0.5 xl:after:bg-[#dcf14f] after:mt-1.5  after:rounded after:mx-auto text-center transition-all duration-200;
   }
-  .nav-item.nav-item-active {
-    @apply after:h-0.5;
+  .nav-item.active {
+    @apply xl:after:h-0.5;
+  }
+
+  nav ul li {
+    box-shadow: 0 20px 13px rgba(0, 0, 0, 0.03), 0 8px 5px rgba(0, 0, 0, 0.08);
+    @apply relative w-full xl:w-auto bg-[#0e1612] border-y border-[#1b2d25] xl:bg-transparent xl:border-none px-2 py-4 xl:shadow-none;
+  }
+
+  nav ul li.active {
+    @apply bg-[#11201a] w-full xl:w-auto xl:bg-transparent;
+  }
+}
+
+@layer toggle {
+  .toggle {
+    @apply relative top-0 left-0 w-full h-[50px] bg-[#2196f3] text-white flex xl:hidden items-center justify-end py-0 px-5 text-xl cursor-pointer;
+  }
+
+  .toggle::before {
+    content: '';
+    margin-right: 10px;
+  }
+
+  .toggle.active::before {
+    content: '';
+    margin-right: 10px;
+  }
+
+  .toggle span {
+    position: relative;
+    width: 20px;
+    height: 50px;
+  }
+
+  .toggle span::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transition: 0.5s;
+  }
+
+  .toggle span::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transition: 0.5s;
+  }
+
+  .toggle.active span::before {
+    transform: rotate(225deg);
+    top: 24px;
+  }
+  .toggle.active span::after {
+    transform: rotate(135deg);
+    bottom: 24px;
   }
 }
 

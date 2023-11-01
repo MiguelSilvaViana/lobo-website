@@ -67,24 +67,29 @@ const ChangeLanguage = () => {
   }, []);
 
   return (
-    <div className='flex flex-col min-w-[180px] items-center relative py-2  rounded'>
+    <div className='flex flex-col min-w-[150px] xl:min-w-[180px] items-center relative py-2  rounded'>
       <button
-        className='flex items-center text-base text-white rounded gap-x-4'
+        className='flex items-center justify-center text-base text-white rounded gap-x-2 xl:gap-x-4'
         onClick={() => setIsOpen(!isOpen)}>
-        {selectedLanguage.name}
-        <div className='flex items-center gap-x-2'>
+        <p className='order-2 text-xs font-semibold xl:order-none sm:text-base'>
+          {selectedLanguage.name}
+        </p>
+        <div className='order-1  xl:order-none xl:w-[40px] xl:h-[40px] sm:w-[30px] sm:h-[30px] w-[24px] h-[24px] flex items-center '>
           <Image
             src={selectedLanguage.src}
             alt={selectedLanguage.alt}
-            width={40}
-            height={40}
-            className='object-cover rounded-full w-[38px] h-[38px]'
+            width={0}
+            height={0}
+            sizes='100vw'
+            className='object-cover w-full h-full rounded-full'
             priority={true}
           />
+        </div>
+        <div className='order-3 xl:order-none'>
           {!isOpen ? (
-            <ChevronDown className='w-5 h-5 text-gray-200' />
+            <ChevronDown className='w-4 h-4 text-gray-200 sm:w-5 sm:h-5' />
           ) : (
-            <ChevronUp className='w-5 h-5 text-gray-200' />
+            <ChevronUp className='w-4 h-4 text-gray-200 sm:w-5 sm:h-5' />
           )}
         </div>
       </button>

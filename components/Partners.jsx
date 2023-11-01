@@ -86,23 +86,25 @@ const Partners = async () => {
     <div className='relative h-auto min-w-full min-h-full'>
       <div className='relative flex flex-col items-center justify-center w-full h-full'>
         <div className='container p-10'>
-          <div className='flex flex-col items-center justify-center '>
-            <h2 className='text-4xl font-semibold'>{t('Our Partners')}</h2>
-            <p className='text-xl '>
+          <div className='flex flex-col items-center justify-center text-center'>
+            <h2 className='text-2xl font-semibold sm:text-3xl xl:text-4xl'>
+              {t('Our Partners')}
+            </h2>
+            <p className='text-lg sm:text-xl '>
               {t(
                 'We belive in working together and just place a nice quote here',
               )}
             </p>
           </div>
 
-          <div className='grid items-center justify-center grid-cols-1 mt-10 xl:gap-10 lg:gap-6 lg:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5'>
+          <div className='grid items-center justify-center grid-cols-1 gap-4 mx-auto mt-10 xl:gap-10 lg:gap-6 sm:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5 sm:gap-6'>
             {partnersLinks.map((item, index) => {
               return (
                 <CardTemplate
+                  key={index}
                   link={item.link}
                   img={item.img}
                   text={item.text}
-                  key={index}
                 />
               );
             })}

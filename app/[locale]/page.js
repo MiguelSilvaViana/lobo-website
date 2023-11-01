@@ -11,17 +11,19 @@ export default async function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-black">
       <Header />
-
+      {/* passar um corretivo em todos os textos para ver se todos estao traduzidos */}
       {/* ajeitar a imagem do lobo e as traduçoes dos cards */}
+      {/* criar a pagina volti card */}
       <section id='home' className='flex items-center justify-center w-full h-auto text-white '>
         <Wolf />
       </section>
 
+      {/* algumas opçoes nao aparece quando seleciona binance por exemplo ai tem que remover */}
       <section id='tokenomics' className='flex items-center justify-center w-full h-auto text-white  border-t-4 border-[#a2b238]'>
         <Tokenomics />
       </section>
 
-      <section id='dex' className='flex items-center justify-center w-full h-screen text-white '>
+      <section id='dex' className='flex items-center justify-center w-full h-auto text-white xl:h-screen '>
         <Dex />
       </section>
 
@@ -29,11 +31,13 @@ export default async function Home() {
         <NewsMiddle />
       </section>
 
-      <section id='games' className='flex items-center justify-center w-full h-screen text-white'>
+      <section id='games' className='flex items-center justify-center w-full h-auto text-white xl:h-screen'>
         <VoltiGames />
       </section>
 
-      <section id='exchanges' className='flex items-center justify-center w-full h-screen text-white bg-[#1b2d25]' >
+      {/* VOLTI Card */}
+
+      <section id='exchanges' className='flex items-center justify-center w-full h-auto min-h-screen text-white bg-[#1b2d25]' >
         <CentralizedExchanges />
       </section>
 
@@ -45,21 +49,15 @@ export default async function Home() {
         <Partners />
       </section>
 
-      {/* news */}
       <section id='news' className='flex items-center justify-center w-full h-auto text-black bg-gray-100 '>
         <NewsSection />
       </section>
 
-      {/* vdsc */}
       <section id='vdsc' className='flex items-center justify-center w-full h-screen overflow-hidden text-white bg-black'>
         <Vdsc />
       </section>
 
-      {/* footer */}
       <Footer />
-      {/* <section id='footer' className='flex items-center justify-center w-full h-screen text-white bg-black'>
-      </section> */}
-
     </main>
   );
 }

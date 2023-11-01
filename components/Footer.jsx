@@ -18,42 +18,42 @@ const Footer = () => {
   const socialLinks = [
     {
       link: 'https://t.me/VoltInu_Portal',
-      icon: <BsTelegram size={56} color='#dcf14f' />,
+      icon: <BsTelegram className='' />,
       text: 'Telegram',
     },
     {
       link: 'https://twitter.com/VoltInuOfficial',
-      icon: <BsTwitter size={56} color='#dcf14f' />,
+      icon: <BsTwitter />,
       text: 'Twitter',
     },
     {
       link: 'https://discord.com/invite/mRmg5ZKJv9',
-      icon: <FaDiscord size={56} color='#dcf14f' />,
+      icon: <FaDiscord />,
       text: 'Discord',
     },
     {
       link: 'https://www.facebook.com/voltinuofficial/?show_switched_toast=0&show_invite_to_follow=0&show_switched_tooltip=0&show_podcast_settings=0&show_community_review_changes=0&show_community_rollback=0&show_follower_visibility_disclosure=0',
-      icon: <BsFacebook size={56} color='#dcf14f' />,
+      icon: <BsFacebook />,
       text: 'Facebook',
     },
     {
       link: 'https://www.youtube.com/@voltinuofficial',
-      icon: <AiFillYoutube size={60} color='#dcf14f' />,
+      icon: <AiFillYoutube className='xl:text-[60px] text-[44px]' />,
       text: 'Youtube',
     },
     {
       link: 'https://medium.com/@VoltInu',
-      icon: <BsMedium size={56} color='#dcf14f' />,
+      icon: <BsMedium />,
       text: 'Medium',
     },
     {
       link: 'https://www.instagram.com/volt_inu_official/',
-      icon: <BsInstagram size={56} color='#dcf14f' />,
+      icon: <BsInstagram />,
       text: 'Instagram',
     },
     {
       link: 'https://www.tiktok.com/@volt_inu',
-      icon: <FaTiktok size={56} color='#dcf14f' />,
+      icon: <FaTiktok />,
       text: 'TikTok',
     },
   ];
@@ -74,9 +74,9 @@ const Footer = () => {
   ];
   return (
     <footer
-      className='py-16 bg-[#0e1612]'
+      className='py-16 bg-[#0e1612] w-full flex items-center justify-center px-4 sm:px-10'
       style={{ boxShadow: 'inset -3px 20px 30px -10px rgba(0,0,0,.3)' }}>
-      <div className='flex flex-col items-center justify-center w-full text-white gap-y-10'>
+      <div className='container flex flex-col items-center justify-center w-full text-white gap-y-10'>
         <div className='relative text-center'>
           <h2 className='text-4xl font-semibold'>Our Socials</h2>
           <p className='text-lg text-gray-300 xl:text-xl'>
@@ -85,14 +85,20 @@ const Footer = () => {
           </p>
         </div>
         {/* Social Links */}
-        <div className='flex flex-wrap items-center justify-center w-full gap-6 mb-10'>
+        <div className='flex flex-wrap items-center justify-center w-full mb-10 gap-x-8 xl:px-24'>
           {socialLinks.map((item, index) => {
             return (
               <>
-                <div className='flex flex-col items-center justify-center gap-y-2'>
-                  {item.icon}
+                <Link
+                  key={index}
+                  href={item.link}
+                  target='_blank'
+                  className='flex flex-col items-center justify-center flex-1 p-2 transition-all duration-500 rounded-lg cursor-pointer gap-y-2 group hover:scale-125 hover:bg-slate-100 hover:bg-opacity-10'>
+                  <div className='text-[#dcf14f] group-hover:text-slate-100 transition-all duration-500 text-[40px] xl:text-[56px]'>
+                    {item.icon}
+                  </div>
                   <p>{item.text}</p>
-                </div>
+                </Link>
               </>
             );
           })}
@@ -104,11 +110,12 @@ const Footer = () => {
           </h4>
         </div>
 
-        <div className='flex flex-wrap items-center justify-center gap-x-10'>
+        <div className='relative flex flex-wrap items-center justify-center w-full gap-4 sm:gap-x-10'>
           <DoownloadWhitepaperButton />
           {documentsLinks.map((item, index) => {
             return (
               <Link
+                key={index}
                 className='text-sm underline transition-all duration-200 opacity-70 decoration-2 underline-offset-8 xl:text-base hover:opacity-100'
                 href={item.link}
                 target='_blank'>

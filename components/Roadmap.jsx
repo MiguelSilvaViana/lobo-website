@@ -90,18 +90,18 @@ const Roadmap = async () => {
 
   return (
     <>
-      <div className='flex flex-col items-center justify-center w-full bg-white shadow-2xl shadow-black py-36'>
+      <div className='flex flex-col items-center justify-center w-full px-10 py-10 bg-white shadow-2xl shadow-black sm:py-24 xl:py-36 xl:px-0'>
         <div>
           <h2 className='text-4xl'>{t('The Roadmap')}</h2>
         </div>
 
         {/* Roadmap */}
-        <div className='container flex p-4 mt-10 bg-white rounded shadow-2xl gap-x-1 shadow-black'>
+        <div className='container flex flex-col p-4 mt-10 bg-white rounded shadow-2xl xl:flex-row gap-x-1 shadow-black '>
           {stages.map((item, index) => {
             return (
               <div
-                className='flex flex-col flex-1 px-1 py-2 gap-y-6'
-                key={index}>
+                key={index}
+                className='flex flex-col flex-1 px-1 py-2 gap-y-6'>
                 <div
                   className={` p-3 rounded flex items-center justify-center ${
                     item.stage[1].actualStage
