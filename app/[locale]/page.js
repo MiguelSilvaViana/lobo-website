@@ -1,7 +1,7 @@
 import { getCurrentLocale, getScopedI18n, getI18n } from '../../locales/server';
 /* components */
 import {
-  Header, Wolf, Tokenomics, Dex, NewsMiddle, VoltiGames, CentralizedExchanges, Roadmap, Partners, NewsSection, Vdsc, Footer
+  Header, Wolf, Tokenomics, Dex, NewsMiddle, VoltiGames, CentralizedExchanges, Roadmap, Partners, NewsSection, Vdsc, Footer, VoltiCard
 } from '../../components';
 
 export default async function Home() {
@@ -11,9 +11,7 @@ export default async function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-black">
       <Header />
-      {/* passar um corretivo em todos os textos para ver se todos estao traduzidos */}
       {/* ajeitar a imagem do lobo e as traduçoes dos cards */}
-      {/* criar a pagina volti card */}
       <section id='home' className='flex items-center justify-center w-full h-auto text-white '>
         <Wolf />
       </section>
@@ -35,7 +33,9 @@ export default async function Home() {
         <VoltiGames />
       </section>
 
-      {/* VOLTI Card */}
+      <section id='exchanges' className='flex items-center justify-center w-full h-auto xl:min-h-screen text-black bg-[#f1f1f1] border-t-[#ddd] border-t overflow-hidden'>
+        <VoltiCard />
+      </section>
 
       <section id='exchanges' className='flex items-center justify-center w-full h-auto min-h-screen text-white bg-[#1b2d25]' >
         <CentralizedExchanges />
@@ -58,6 +58,6 @@ export default async function Home() {
       </section>
 
       <Footer />
-    </main>
+    </main >
   );
 }

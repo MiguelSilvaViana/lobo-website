@@ -9,7 +9,7 @@ const VoltiGames = () => {
       style={{
         backgroundSize: '50%',
       }}>
-      <div className='container relative z-10 flex items-center justify-center xl:items-end xl:justify-end xl:ml-[48%] w-full xl:py-0 py-10'>
+      <div className='container relative z-10 flex items-center justify-center xl:items-end xl:justify-end xl:ml-[58%] w-full xl:py-0 py-10'>
         <div className='relative flex flex-col items-end gap-y-6'>
           <div className='w-full'>
             <p className='text-[#a2b238] text-xl'>

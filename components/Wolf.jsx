@@ -41,25 +41,25 @@ const Wolf = async () => {
         <WolfAvatar />
       </div>
 
-      <div className='container z-10 flex flex-col items-start justify-center h-full px-10 py-32 sm:px-24'>
+      <div className='container z-10 flex flex-col items-start justify-center h-full px-10 py-32 sm:px-20'>
         <h1 className='relative text-4xl font-semibold leading-relaxed lg:text-5xl xl:text-6xl'>
           <span className='text-[#687321]'>Volt Inu</span>
           <br />
           <span className='text-[#dcf14f] after:content-[""] after:absolute after:w-[26%] sm:after:w-[16%] after:bg-white after:h-1 after:rounded xl:after:top-[96%] after:left-2 after:top-[98%]'>
-            The People's Crypto
+            {t("The People's Crypto")}
           </span>
         </h1>
 
         <div className='mt-4 xl:mt-2 max-w-[36rem]'>
           <p>
-            Volt Inu is an ecosystem aimed at becoming a one-stop shop offering
-            DeFi products while bringing profits back to the native token to
-            support its deflationary purpose.
+            {t(
+              'Volt Inu is an ecosystem aimed at becoming a one-stop shop offering DeFi products while bringing profits back to the native token to support its deflationary purpose.',
+            )}
           </p>
         </div>
 
         <div className='mt-6 mb-6 xl:mt-8'>
-          <p className='text-[#c5d845]'>Our ecosystem</p>
+          <p className='text-[#c5d845]'>{t('Our ecosystem')}</p>
         </div>
 
         <div className='grid items-center justify-center grid-cols-1 gap-4 xl:grid-cols-2'>

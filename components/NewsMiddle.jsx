@@ -39,7 +39,7 @@ const NewsMiddle = () => {
           <div className='flex gap-20'>
             {images.map((item, index) => {
               return (
-                <Link href={item.link} key={index}>
+                <Link href={item.link} key={index} target='_blank'>
                   <Image
                     src={item.img}
                     width={300}
@@ -54,7 +54,7 @@ const NewsMiddle = () => {
           <div className='flex gap-20'>
             {images.map((item, index) => {
               return (
-                <Link href={item.link} key={index}>
+                <Link href={item.link} key={index} target='_blank'>
                   <Image
                     src={item.img}
                     width={300}

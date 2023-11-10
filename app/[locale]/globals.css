@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.cdnfonts.com/css/credit-card');
+
 .translate-z-0 {
   transform: translateZ(0px);
 }
@@ -226,6 +230,231 @@
     }
     100% {
       left: -100%;
+    }
+  }
+}
+
+@layer voltiCard {
+  #block-volticard-visual {
+    display: none;
+    align-items: center;
+    flex-basis: 50%;
+    justify-content: center;
+    color: white;
+  }
+
+  #block-volticard-visual-card {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background-image: linear-gradient(90deg, #111, #555);
+    border-radius: 0.875rem;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    color: var(--color-text-light);
+    font-family: CreditCard, monospace;
+    height: 15.625rem;
+    overflow: hidden;
+    position: relative;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    width: 25rem;
+  }
+
+  #block-volticard-visual-card .logo {
+    height: 5rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+  }
+
+  #block-volticard-visual-card .name {
+    font-family: Poppins, sans-serif;
+    font-weight: 500;
+    left: 1.5rem;
+    position: absolute;
+    top: 1.875rem;
+  }
+
+  #block-volticard-visual-card .chip {
+    align-items: center;
+    background-image: linear-gradient(to bottom left, #ffecc7, #d0b978);
+    border-radius: 0.25rem;
+    display: flex;
+    height: 2.5rem;
+    justify-content: center;
+    left: 1.5rem;
+    overflow: hidden;
+    position: absolute;
+    top: 4.5rem;
+    width: 3.125rem;
+  }
+
+  #block-volticard-visual-card .chip .chip-line {
+    background-color: #333;
+    height: 1px;
+    position: absolute;
+    width: 100%;
+  }
+
+  #block-volticard-visual-card .chip .chip-line:first-child {
+    top: 13px;
+  }
+
+  #block-volticard-visual-card .chip .chip-line:nth-child(2) {
+    top: 20px;
+  }
+
+  #block-volticard-visual-card .chip .chip-line:nth-child(3) {
+    top: 28px;
+  }
+
+  #block-volticard-visual-card .chip .chip-line:nth-child(4) {
+    height: 50px;
+    left: 25px;
+    width: 1px;
+  }
+
+  #block-volticard-visual-card .chip .chip-main {
+    background-image: linear-gradient(to bottom left, #efdbab, #e1cb94);
+    border: 1px solid #333;
+    border-radius: 3px;
+    height: 25px;
+    width: 20px;
+    z-index: 1;
+  }
+
+  #block-volticard-visual-card .wave {
+    height: 2.5rem;
+    left: 5.75rem;
+    position: relative;
+    top: 4.5rem;
+  }
+
+  #block-volticard-visual-card .card-number {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    left: 1.5rem;
+    position: absolute;
+    right: 1.5rem;
+    top: 8.5rem;
+  }
+
+  #block-volticard-visual-card .expires {
+    font-size: 0.875rem;
+    left: 1.5rem;
+    position: absolute;
+    top: 10.25rem;
+  }
+
+  #block-volticard-visual-card .expires .end-text {
+    color: hsla(0, 0%, 100%, 0.75);
+    font-size: 0.5625rem;
+  }
+
+  #block-volticard-visual-card .card-holder {
+    left: 1.5rem;
+    position: absolute;
+    top: 12.375rem;
+  }
+
+  #block-volticard-visual-card .visa {
+    display: flex;
+    opacity: 0.3;
+    position: absolute;
+    right: 1.5rem;
+    top: 12.25rem;
+  }
+
+  #block-volticard-visual-card .visa svg {
+    height: 1.5rem;
+  }
+
+  @media (min-width: 1280px) {
+    #block-volticard-visual {
+      display: flex;
+    }
+  }
+}
+
+@layer animatedBackground {
+  /* 3 divs */
+  .picture {
+    display: none;
+    position: absolute;
+    overflow: hidden;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    transform: rotate(135deg) translate(-5rem, -25rem);
+  }
+
+  .picture > div {
+    position: absolute;
+    width: 100%;
+  }
+
+  .picture > div:first-child {
+    animation: first-stripe-animation 3s ease-in-out infinite alternate;
+    background-color: #11201a;
+    bottom: 12rem;
+    height: 12rem;
+  }
+
+  .picture > div:nth-child(2) {
+    animation: second-stripe-animation 5s ease-in-out infinite alternate;
+    background-color: #c5d845;
+    bottom: 6rem;
+    height: 6rem;
+  }
+
+  .picture > div:nth-child(3) {
+    animation: third-stripe-animation 4s ease-in-out infinite alternate;
+    background-color: #687321;
+    bottom: 3rem;
+    height: 3rem;
+  }
+
+  @keyframes first-stripe-animation {
+    0% {
+      height: 12rem;
+    }
+
+    to {
+      height: 13rem;
+    }
+  }
+
+  @keyframes second-stripe-animation {
+    0% {
+      height: 6rem;
+    }
+
+    to {
+      height: 9rem;
+    }
+  }
+
+  @keyframes third-stripe-animation {
+    0% {
+      bottom: 3rem;
+      height: 3rem;
+    }
+
+    to {
+      bottom: 2rem;
+      height: 6rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .picture {
+      display: flex;
     }
   }
 }

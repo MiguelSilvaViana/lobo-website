@@ -9,3 +9,18 @@ export const { useI18n, useScopedI18n, I18nProviderClient, useChangeLocale,
     tr: () => import('./translations/tr'),
     zh: () => import('./translations/zh'),
   });
+
+
+/* header */
+/* home */
+/* tokenomics */
+/* dex */
+/* newsMiddle */
+/* VoltiGames */
+/* VoltiCard */
+/* CentralizedExchanges */
+/* Roadmap */
+/* Partners */
+/* NewsSection */
+/* Vdsc */
+/* Footer */

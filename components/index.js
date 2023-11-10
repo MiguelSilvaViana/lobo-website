@@ -10,5 +10,7 @@ import Partners from './Partners';
 import NewsSection from './NewsSection';
 import Vdsc from './Vdsc';
 import Footer from './Footer';
+import VoltiCard from './VoltiCard';
 
-export { Header, Wolf, Tokenomics, Dex, NewsMiddle, VoltiGames, CentralizedExchanges, Roadmap, Partners, NewsSection, Vdsc, Footer };
+
+export { Header, Wolf, Tokenomics, Dex, NewsMiddle, VoltiGames, CentralizedExchanges, Roadmap, Partners, NewsSection, Vdsc, Footer, VoltiCard, };

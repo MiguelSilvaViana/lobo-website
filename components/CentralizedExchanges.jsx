@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 const CentralizedExchanges = () => {
   return (
-    <div className='container flex items-center justify-center p-4 py-10 sm:p-10 xl:p-20 sm:py-0 xl:py-0'>
+    <div className='container flex items-center justify-center p-4 py-10 sm:p-10 xl:p-20 sm:py-0 xl:py-0 '>
       <div className='flex flex-col p-6 text-black bg-white rounded xl:flex-row sm:p-10 xl:p-14 xl:gap-x-6 gap-y-10'>
         <div className='flex flex-col w-full xl:w-1/2 gap-y-6'>
           <div>
