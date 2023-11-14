@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import DoownloadWhitepaperButton from './DoownloadWhitepaperButton';
+import { getI18n } from '../locales/server';
 
 /* icons */
 import {
@@ -14,7 +15,8 @@ import {
 import { FaDiscord, FaTiktok } from 'react-icons/fa';
 import { AiFillYoutube } from 'react-icons/ai';
 
-const Footer = () => {
+const Footer = async () => {
+  const t = await getI18n();
   const socialLinks = [
     {
       link: 'https://t.me/VoltInu_Portal',
@@ -78,10 +80,16 @@ const Footer = () => {
       style={{ boxShadow: 'inset -3px 20px 30px -10px rgba(0,0,0,.3)' }}>
       <div className='container flex flex-col items-center justify-center w-full text-white gap-y-10'>
         <div className='relative text-center'>
-          <h2 className='text-4xl font-semibold'>Our Socials</h2>
+          <h2 className='text-4xl font-semibold'>{t('Our Socials')}</h2>
           <p className='text-lg text-gray-300 xl:text-xl'>
-            Become a member of <strong>the Voltarmy</strong>...the best
-            community in the crypto space
+            {t(
+              'Become a member of {theVoltarmy}...the best community in the crypto space',
+              {
+                theVoltarmy: <strong>{t('theVoltarmy')}</strong>,
+              },
+            )}
+            {/* Become a member of <strong>the Voltarmy</strong>...the best
+            community in the crypto space */}
           </p>
         </div>
         {/* Social Links */}
@@ -106,7 +114,7 @@ const Footer = () => {
         {/* Documents */}
         <div className='relative text-center'>
           <h4 className='text-xl text-center after:content-[""] after:flex after:w-[80%] after:rounded after:h-1 after:bg-[#dcf14f] after:mx-auto after:mt-2'>
-            Documents & links
+            {t('Documents & links')}
           </h4>
         </div>
 
@@ -133,8 +141,8 @@ const Footer = () => {
             alt='logo volt inu'
           />
           <div className='opacity-70'>
-            <p>Copyright © 2023 Volt Inu. All Rights Reserved.'</p>
-            <p>Stay Volted!</p>
+            <p>{t('Copyright © 2023 Volt Inu. All Rights Reserved.')}</p>
+            <p>{t('Stay Volted!')}</p>
           </div>
         </div>
       </div>

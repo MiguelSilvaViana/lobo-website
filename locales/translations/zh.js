@@ -1,4 +1,6 @@
 export default {
+  /* zh = chines */
+
   "The number one DEX": "第一个通缩 DEX",
   "You can place the first": "无需添加流动性",
   "USP": "美国药典",

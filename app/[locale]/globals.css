@@ -454,7 +454,7 @@
 
   @media (min-width: 1280px) {
     .picture {
-      display: flex;
+      display: inline-block;
     }
   }
 }

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useI18n } from '../locales/client';
 import Image from 'next/image';
 
 const IconCard = ({ percentage, text, img, changeClassWithNetwork }) => {
@@ -29,22 +30,11 @@ const IconCard = ({ percentage, text, img, changeClassWithNetwork }) => {
   );
 };
 
-// { text: 'Liquidity Pool', percentage: '2%', img: '/img/icon2.png' },
-// {
-//   text: 'Burns',
-//   percentage: '2%',
-//   img: '/img/icon3.png',
-//   bscPercentage: '4%',
-// },
-const icons = [
-  { text: 'Reflections', percentage: '1%', img: '/img/icon1.png' },
-  { text: 'Marketing', percentage: '4%', img: '/img/icon4.png' },
-  { text: 'Treasury', percentage: '4%', img: '/img/icon5.png' },
-];
-
 const svgString = `<svg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='512' height='512' x='0' y='0' viewBox='0 0 511.999 511.999' style='enable-background:new 0 0 512 512' xml:space='preserve' class=''><g><path d='M205.082 510.784c6.773 2.895 14.648.478 18.604-5.771l180-286A15.003 15.003 0 0 0 391 196H270.868l44.678-177.309c1.802-7.163-1.846-14.561-8.628-17.476-6.738-2.9-14.663-.469-18.604 5.771l-180 286A15.003 15.003 0 0 0 121 315.999h120.132l-44.678 177.309c-1.802 7.164 1.845 14.561 8.628 17.476z' fill='#111111' data-original='#000000' class=''></path></g></svg>`;
 
 const Tokenomics = () => {
+  const t = useI18n();
+
   const [copied, setCopied] = useState(false);
   const [network, setNetwork] = useState('ETH');
   const [mostDropDown, setMostDropDown] = useState(false);
@@ -82,6 +72,12 @@ const Tokenomics = () => {
     }
   };
 
+  const icons = [
+    { text: t('Reflections'), percentage: '1%', img: '/img/icon1.png' },
+    { text: t('Marketing'), percentage: '4%', img: '/img/icon4.png' },
+    { text: t('Treasury'), percentage: '4%', img: '/img/icon5.png' },
+  ];
+
   return (
     <div
       className='flex flex-col items-center justify-center w-full h-full py-20 bg-black bg-no-repeat bg-cover sm:py-36'
@@ -90,11 +86,16 @@ const Tokenomics = () => {
       }}>
       <div className='container flex flex-col items-center justify-center px-6 xl:px-0'>
         <div className='relative flex flex-col items-center justify-center text-center'>
-          <h2 className='text-4xl'>Our Tokenomics</h2>
+          <h2 className='text-4xl'>{t('Our Tokenomics')}</h2>
           <p className='relative text-base sm:text-xl after:content-[""] after:flex after:justify-center after:items-center after:w-[16%] after:bg-[#c5d845] after:h-1 after:mt-8 after:rounded after:top-[92%] after:relative after:mx-auto'>
-            We are on <strong>Ethereum</strong> Blockchain,{' '}
-            <strong>Binance</strong> Smart Chain and <strong>Polygon</strong>{' '}
-            Chain
+            {t(
+              'We are on {ethereum} Blockchain, {binance} Smart Chain and {polygon} Chain',
+              {
+                ethereum: <strong>{t('Ethereum')}</strong>,
+                binance: <strong>{t('Binance')}</strong>,
+                polygon: <strong>{t('Polygon')}</strong>,
+              },
+            )}
           </p>
         </div>
 
@@ -145,20 +146,20 @@ const Tokenomics = () => {
           <IconCard
             img='/img/icon2.png'
             percentage='2%'
-            text='Liquidity Pool'
+            text={t('Liquidity Pool')}
             changeClassWithNetwork={`${
               network === 'BSC' ? 'hidden invisible' : ''
             }`}
           />
           <IconCard
             img='/img/icon3.png'
-            text='Burns'
+            text={t('Burns')}
             percentage={network === 'BSC' ? '4%' : '2%'}
           />
         </div>
 
         <div className='flex flex-col items-center justify-center w-full mt-10 gap-y-6'>
-          <p className='text-xl'>Our Contract</p>
+          <p className='text-xl'>{t('Our Contract')}</p>
 
           <div className='relative  flex px-4 py gap-x-4 py-4 bg-[#111c16] rounded-lg w-full sm:w-[700px] text-white items-center justify-center'>
             <p className='text-xl font-bold'>{network}</p>
@@ -171,13 +172,13 @@ const Tokenomics = () => {
             <button
               className='text-xl transition-all duration-200 hover:text-gray-300'
               onClick={handleCopy}>
-              {copied ? 'Copied' : 'Copy'}
+              {copied ? t('Copied') : t('Copy')}
             </button>
           </div>
 
           <div className='flex flex-col items-center justify-center gap-y-8'>
             <Link
-              className='bg-[#dcf14f] text-black px-4 py-3 sm:px-5 sm:py-3 xl:px-6 xl:py-3 rounded-lg font-semibold flex items-center justify-center gap-x-2 hover:scale-105 transition-all duration-200'
+              className='bg-[#dcf14f] text-black px-4 py-3 sm:px-5 sm:py-3 xl:px-6 xl:py-3 rounded-lg lg:text-base xl:text-lg text-xs font-semibold flex items-center justify-center gap-x-2 hover:scale-105 transition-all duration-200'
               href='https://voltichange.net/'
               target='_blank'>
               <svg
@@ -186,35 +187,35 @@ const Tokenomics = () => {
                 height='34'
                 dangerouslySetInnerHTML={{ __html: svgString }}
               />
-              BUY ON VOLTICHANGE
+              {t('BUY ON VOLTICHANGE')}
             </Link>
 
             <div className='flex flex-col items-center justify-center w-full gap-y-4'>
-              <p>Credit Cards Or Bank Transfer</p>
+              <p>{t('Credit Cards Or Bank Transfer')}</p>
               <div className='relative flex flex-wrap items-center justify-center gap-4 sm:justify-center lg:gap-0 lg:gap-x-4'>
                 <Link
                   className='text-sm border-[#dcf14f] border rounded p-2 hover:bg-[#dcf14f] hover:text-black transition-all duration-300'
                   href='https://buy.volt.indacoin.io/'
                   target='_blank'>
-                  Buy On IndaCoin
+                  {t('Buy On IndaCoin')}
                 </Link>
                 <Link
                   className='text-sm border-[#dcf14f] border rounded p-2 hover:bg-[#dcf14f] hover:text-black transition-all duration-300'
                   href='https://changenow.io/currencies/volt'
                   target='_blank'>
-                  Buy on ChangeNOW
+                  {t('Buy on ChangeNOW')}
                 </Link>
                 <Link
                   className='text-sm border-[#dcf14f] border rounded p-2 hover:bg-[#dcf14f] hover:text-black transition-all duration-300'
                   href='https://guardarian.com/buy-volt'
                   target='_blank'>
-                  Buy on Guardarian
+                  {t('Buy on Guardarian')}
                 </Link>
                 <Link
                   className='text-sm border-[#dcf14f] border rounded p-2 hover:bg-[#dcf14f] hover:text-black transition-all duration-300'
                   href='https://changehero.io/?ref=7fc775dabda64add8641b2e13d10111c'
                   target='_blank'>
-                  Buy On ChangeHero
+                  {t('Buy On ChangeHero')}
                 </Link>
               </div>
             </div>

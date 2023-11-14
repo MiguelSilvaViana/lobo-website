@@ -15,10 +15,11 @@ export default {
   "The People's Crypto": '',
   'Volt Inu is an ecosystem aimed at becoming a one-stop shop offering DeFi products while bringing profits back to the native token to support its deflationary purpose.': '',
   'Our ecosystem': '',
+  'More': '',
 
   /* tokenomics */
   'Our Tokenomics': '',
-  'We are on Ethereum Blockchain, Binance Smart Chain and Polygon Chain': '',
+  'We are on {ethereum} Blockchain, {binance} Smart Chain and {polygon} Chain': '',
   'Reflections': '',
   'Marketing': '',
   'Treasury': '',
@@ -27,34 +28,52 @@ export default {
   'Our Contract': '',
   'BUY ON VOLTICHANGE': '',
   'Credit Cards Or Bank Transfer': '',
-  'Buy On': '',
+  'Buy On IndaCoin': '',
+  'Buy on ChangeNOW': '',
+  'Buy on Guardarian': '',
+  'Buy On ChangeHero': '',
+  'Copy': '',
+  'Copied': '',
 
   /* dex */
   'The number one DEX': '',
   'Our DEX allows projects to get listed in a free and permissionless way and makes them become deflationary by burning their supply.': '',
-  'No liquidity to add': '',
-  '0.25% fee burning your supply while trading': '',
-  'A fully customizable widget to place on your own website': '',
+  'No {liquidity} to add': '',
+  liquidity: 'liquidity',
+  '{fee} your supply while trading': '',
+  fee: '0.25% fee burning',
+  'A fully {customizableWidget} to place on your own website': '',
+  customizableWidget: 'customizable widget',
 
   /* VoltiGames */
   'Play to Earn...and Get Volted!': '',
-  'We offer multiple ways to earn $VOLT in Game-Fi and we keep on expanding through partnerships in 2023.': '',
-  'Paying out monthly rewards to communities': '',
-  'Offering buy-back and burns to top rated projects': '',
-  'NFT integrations of the Volted Dragons': '',
+  'We offer multiple ways to earn {token} in Game-Fi and we keep on expanding through partnerships in 2023.': '',
+  token: '$VOLT',
+  'Paying out {monthlyRewards} to communities': '',
+  monthlyRewards: 'monthly rewards',
+  'Offering {buyBackAndBurns} to top rated projects': '',
+  buyBackAndBurns: 'buy back and burns',
+  'NFT integrations of the {voltedDragons}': '',
+  voltedDragons: 'Volted Dragons'
   "Let's Play!": '',
 
   /* VoltiCard */
   'Pay with Crypto': '',
-  'A physical / virtual Debit Card that allows users to seamlessly spend crypto currencies for everyday purchases.': '',
-  'The power of DEFI at your fingertips': '',
-  'Send up to 6 cryptos from your wallet directly to your physical or virtual card. On launch BTC, ETH, XRP, USDT, USDC and BUSD.': '',
-  'Powered by VISA, so accepted worldwide': '',
+  'A physical / virtual Debit Card that allows users to seamlessly spend cryptocurrencies for everyday purchases.': '',
+  'The {powerOfDefi} at your fingertips': '',
+  powerOfDefi: 'power of DEFI'
+  'Send up to {sixCryptos} from your wallet directly to your physical or virtual card. {onLaunchs}': '',
+  sixCryptos: '6 cryptos',
+  onLaunchs: 'On launch BTC, ETH, XRP, USDT, USDC and BUSD.'
+  'Powered by {visa}, so accepted worldwide': '',
+  visa: 'VISA',
+  'REQUEST VOLTICARD': '',
 
   /* CentralizedExchanges */
   'When DEFI is not your thing': '',
-  'Volt can be traded on 82 Centralized Exchanges': '',
-  'Although we are big supporters of decentralization, CEXs have always been a priority for us! They allow for greater accessibility, exposure and liquidity which makes them a key to project longevity.': '',
+  'Volt can be traded on {82} Centralized Exchanges': '',
+  'Although we are big supporters of {decentralization}, CEXs have always been a priority for us! They allow for greater accessibility, exposure and liquidity which makes them a key to project longevity.': '',
+  decentralization: 'decentralization',
   "View CEX's": '',
 
   /* Roadmap */
@@ -66,7 +85,6 @@ export default {
   'Website development': '',
   'Contract deployment': '',
   'Stealth and fair launch': '',
-  'CoinGecko listing': '',
   'CoinGecko listing': '',
   'CoinMarketCap listing': '',
   '1,000 holders': '',
@@ -126,6 +144,7 @@ export default {
   'We belive in working together and just place a nice quote here': '',
 
   /* NewsSection */
+  'READ ARTICLE': '',
   'Volt Inu in the News': '',
   "See who's writing about us": '',
   '23 september 2022': '',
@@ -145,7 +164,8 @@ export default {
 
   /* Footer */
   'Our Socials': '',
-  'Become a member of the Voltarmy...the best community in the crypto space': '',
+  'Become a member of {theVoltarmy}...the best community in the crypto space': '',
+  theVoltarmy: 'the Voltarmy',
   'Documents & links': '',
   "Copyright © 2023 Volt Inu. All Rights Reserved.": '',
   'Stay Volted!': '',

@@ -1,4 +1,5 @@
 export default {
+  /* tr = turco */
   "The number one DEX": "1. deflasyonist DEX",
   "You can place the first": "Eklenecek likidite yok",
   "USP": "USP",

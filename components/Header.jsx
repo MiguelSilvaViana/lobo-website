@@ -14,7 +14,7 @@ const Header = async () => {
 
   return (
     <>
-      <header className='fixed w-screen  py-3 bg-[rgb(20,33,27)]  xl:opacity-90 mx-auto flex items-center justify-center px-2 sm:px-10 xl:px-20 z-50 max-h-[90px]'>
+      <header className='fixed w-screen  py-3 bg-[rgb(20,33,27)]  xl:opacity-90 mx-auto flex items-center justify-center px-2 sm:px-6 xl:px-10 2xl:px-20 z-50 max-h-[90px]'>
         <div className='relative flex items-center justify-between min-w-full 2xl:gap-x-6 gap-x-4 '>
           {/* logo */}
           <Link href='/' className='h-[3rem] relative flex items-center'>

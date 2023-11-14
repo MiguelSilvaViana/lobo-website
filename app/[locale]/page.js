@@ -1,22 +1,19 @@
-import { getCurrentLocale, getScopedI18n, getI18n } from '../../locales/server';
 /* components */
 import {
   Header, Wolf, Tokenomics, Dex, NewsMiddle, VoltiGames, CentralizedExchanges, Roadmap, Partners, NewsSection, Vdsc, Footer, VoltiCard
 } from '../../components';
 
 export default async function Home() {
-  const t = await getI18n();
-  const locale = getCurrentLocale();
+
 
   return (
     <main className="min-h-screen overflow-hidden bg-black">
       <Header />
-      {/* ajeitar a imagem do lobo e as traduçoes dos cards */}
+      {/* ajeitar a imagem do lobo*/}
       <section id='home' className='flex items-center justify-center w-full h-auto text-white '>
         <Wolf />
       </section>
 
-      {/* algumas opçoes nao aparece quando seleciona binance por exemplo ai tem que remover */}
       <section id='tokenomics' className='flex items-center justify-center w-full h-auto text-white  border-t-4 border-[#a2b238]'>
         <Tokenomics />
       </section>
@@ -29,11 +26,11 @@ export default async function Home() {
         <NewsMiddle />
       </section>
 
-      <section id='games' className='flex items-center justify-center w-full h-auto text-white xl:h-screen'>
+      <section id='games' className='z-10 flex items-center justify-center w-full h-auto text-white lg:min-h-screen'>
         <VoltiGames />
       </section>
 
-      <section id='exchanges' className='flex items-center justify-center w-full h-auto xl:min-h-screen text-black bg-[#f1f1f1] border-t-[#ddd] border-t overflow-hidden'>
+      <section id='exchanges' className='flex items-center justify-center w-full h-auto xl:min-h-screen text-black  bg-[#f1f1f1] border-t-[#ddd] border-t overflow-hidden'>
         <VoltiCard />
       </section>
 

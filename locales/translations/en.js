@@ -1,4 +1,5 @@
 export default {
+  /* en = ingles */
   "The number one DEX": "The 1st deflationary DEX",
   "You can place the first": "No liquidity to add",
   "USP": "USP",

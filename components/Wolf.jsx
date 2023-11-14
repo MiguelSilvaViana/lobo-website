@@ -16,19 +16,25 @@ const Wolf = async () => {
     },
     {
       img: '/img/nft.svg',
-      text: 'is our NFT collection Which you can use in future gaming integrations and will give you rewards in real life.',
+      text: t(
+        'is our NFT collection Which you can use in future gaming integrations and will give you rewards in real life.',
+      ),
       highlighted: 'VDSC',
       link: 'https://volteddragons.com/',
     },
     {
       img: '/img/game.svg',
-      text: "includes a P2E racing game and offers rewards plus buy-back & burns, all integrated with our volted NFT'S.",
+      text: t(
+        "includes a P2E racing game and offers rewards plus buy-back & burns, all integrated with our volted NFT'S.",
+      ),
       highlighted: 'VoltiGames',
       link: 'https://game.voltinu.in/',
     },
     {
       img: '/img/interrogation.svg',
-      text: 'is still a mystery and will be launched somewhere in 2023. Stay tuned for our bullish announcement',
+      text: t(
+        'is still a mystery and will be launched somewhere in 2023. Stay tuned for our bullish announcement',
+      ),
       highlighted: 'VoltiFlex',
       link: 'https://twitter.com/VoltInuOfficial/status/1618020329334673408?t=dno8y3sr17Qo4Biwyf8BXA&s=19',
     },

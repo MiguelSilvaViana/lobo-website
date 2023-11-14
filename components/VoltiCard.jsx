@@ -2,10 +2,13 @@ import React from 'react';
 import CreditCard3d from './CreditCard3d';
 import Link from 'next/link';
 import { BsFillCreditCard2BackFill } from 'react-icons/bs';
+import { getI18n } from '../locales/server';
 
-const VoltiCard = () => {
+const VoltiCard = async () => {
+  const t = await getI18n();
+
   return (
-    <div className='relative flex items-center justify-center w-full min-h-full px-10 py-10 text-black sm:px-24 lg:px-32 xl:py-36'>
+    <div className='relative flex items-center justify-center min-w-full min-h-full px-10 py-10 overflow-hidden text-black sm:px-24 lg:px-32 xl:py-36'>
       <div className='picture'>
         <div></div>
         <div></div>
@@ -15,15 +18,16 @@ const VoltiCard = () => {
       <div className='container z-10 flex flex-col items-center justify-center xl:px-10 lg:flex-row gap-x-10'>
         <div className='flex flex-col w-full xl:w-1/2 gap-y-5'>
           <div>
-            <p className='text-[#a2b238] text-xl'>Pay with Crypto</p>
+            <p className='text-[#a2b238] text-xl'>{t('Pay with Crypto')}</p>
             <h2 className='text-3xl font-medium xl:text-6xl'>VoltiCard</h2>
             <hr className='h-1 bg-[#c5d845] max-w-[5rem] ml-2' />
           </div>
 
           <div>
             <p>
-              A physical / virtual Debit Card that allows users to seamlessly
-              spend crypto currencies for everyday purchases.
+              {t(
+                'A physical / virtual Debit Card that allows users to seamlessly spend cryptocurrencies for everyday purchases.',
+              )}
             </p>
           </div>
 
@@ -36,7 +40,9 @@ const VoltiCard = () => {
                 className='accent-[#a2b238] min-w-[22px] min-h-[22px] items-center'
               />
               <label className='pl-0.5 xl:pl-2 text-xs lg:text-base xl:text-xl'>
-                The <strong>power of DEFI</strong> at your fingertips
+                {t('The {powerOfDefi} at your fingertips', {
+                  powerOfDefi: <strong>{t('powerOfDefi')}</strong>,
+                })}
               </label>
             </li>
             <li className='flex items-start gap-x-1 xl:gap-x-2'>
@@ -47,11 +53,17 @@ const VoltiCard = () => {
                 className='accent-[#a2b238] min-w-[22px] min-h-[22px] justify-start items-start '
               />
               <label className='pl-0.5 xl:pl-2 text-xs lg:text-base xl:text-xl'>
-                Send up to <strong>6 cryptos</strong> from your wallet directly
-                to your physical or virtual card.{' '}
-                <span class='text-sm opacity-50'>
-                  On launch BTC, ETH, XRP, USDT, USDC and BUSD.
-                </span>
+                {t(
+                  'Send up to {sixCryptos} from your wallet directly to your physical or virtual card. {onLaunchs}',
+                  {
+                    sixCryptos: <strong>{t('sixCryptos')}</strong>,
+                    onLaunchs: (
+                      <span className='text-sm opacity-50'>
+                        {t('onLaunchs')}
+                      </span>
+                    ),
+                  },
+                )}
               </label>
             </li>
             <li className='flex items-center gap-x-1 xl:gap-x-2'>
@@ -62,7 +74,9 @@ const VoltiCard = () => {
                 className='accent-[#a2b238] min-w-[22px] min-h-[22px] justify-center items-center '
               />
               <label className='pl-0.5 xl:pl-2 text-xs lg:text-base xl:text-xl'>
-                Powered by <strong>VISA</strong>, so accepted worldwide
+                {t('Powered by {visa}, so accepted worldwide', {
+                  visa: <strong>{t('visa')}</strong>,
+                })}
               </label>
             </li>
           </ul>
@@ -73,7 +87,7 @@ const VoltiCard = () => {
               target='_blank'
               className='flex items-center justify-center px-4 py-3 bg-[#dcf14f] cursor-pointer gap-x-2 rounded text-black font-semibold hover:scale-105 transition-all duration-300 lg:text-base text-sm'>
               <BsFillCreditCard2BackFill />
-              REQUEST VOLTICARD
+              {t('REQUEST VOLTICARD')}
             </Link>
           </div>
         </div>

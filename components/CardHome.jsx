@@ -33,7 +33,7 @@ const CardHome = ({ text, img, link, highlighted }) => {
           target='_blank'
           className='flex items-center flex-start text-[#dcf14f] hover:text-white transition-all duration-300'>
           <ChevronRight className='w-4 h-4 cursor-pointer ' />
-          More
+          {t('More')}
         </Link>
       </div>
     </motion.div>

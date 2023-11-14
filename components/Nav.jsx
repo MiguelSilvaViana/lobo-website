@@ -10,7 +10,7 @@ const ButtonNeon = ({ text, href }) => {
         className='relative'
         href={href}
         target='_blank'
-        className='text-base'>
+        className='text-xs 2xl:text-base'>
         <span></span>
         <span></span>
         <span></span>
@@ -55,7 +55,7 @@ const Nav = () => {
       </button>
 
       <ul
-        className={`items-center   justify-center  text-base text-white  xl:flex 2xl:text-lg gap-x-8 2xl:gap-x-10 ${
+        className={`items-center   justify-center  text-xs 2xl:text-base text-white  xl:flex gap-x-8 2xl:gap-x-10 ${
           openMenu
             ? 'flex flex-col absolute  top-[60px] w-screen min-full text-center bg-opacity-100  bg-black -left-2 sm:-left-10'
             : 'hidden bg-transparent'
