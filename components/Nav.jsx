@@ -7,10 +7,10 @@ const ButtonNeon = ({ text, href }) => {
   return (
     <div className='relative z-[9999] neon rounded border-[#dcf14f] border xl:border-none'>
       <Link
-        className='relative'
         href={href}
         target='_blank'
-        className='text-xs 2xl:text-base'>
+        className='relative text-xs 2xl:text-base'
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -50,7 +50,8 @@ const Nav = () => {
     <nav className='flex items-center justify-center w-full font-semibold text-white gap-x-10'>
       <button
         className={` ${openMenu ? 'toggle active' : 'toggle'}`}
-        onClick={() => setOpenMenu(!openMenu)}>
+        onClick={() => setOpenMenu(!openMenu)}
+      >
         <span></span>
       </button>
 
@@ -59,11 +60,13 @@ const Nav = () => {
           openMenu
             ? 'flex flex-col absolute  top-[60px] w-screen min-full text-center bg-opacity-100  bg-black -left-2 sm:-left-10'
             : 'hidden bg-transparent'
-        }`}>
+        }`}
+      >
         <li className={` ${activeSection === 'home' ? 'active ' : ''}`}>
           <Link
             href='#home'
-            className={`nav-item ${activeSection === 'home' ? 'active ' : ''}`}>
+            className={`nav-item ${activeSection === 'home' ? 'active ' : ''}`}
+          >
             {t('Home')}
           </Link>
         </li>
@@ -72,7 +75,8 @@ const Nav = () => {
             href='#tokenomics'
             className={`nav-item ${
               activeSection === 'tokenomics' ? 'active' : ''
-            }`}>
+            }`}
+          >
             {t('Tokenomics')}
           </Link>
         </li>
@@ -81,21 +85,24 @@ const Nav = () => {
             href='#roadmap'
             className={`nav-item ${
               activeSection === 'roadmap' ? 'active' : ''
-            }`}>
+            }`}
+          >
             {t('Roadmap')}
           </Link>
         </li>
         <li className={`${activeSection === 'news' ? 'active' : ''}`}>
           <Link
             href='#news'
-            className={`nav-item ${activeSection === 'news' ? 'active' : ''}`}>
+            className={`nav-item ${activeSection === 'news' ? 'active' : ''}`}
+          >
             {t('News')}
           </Link>
         </li>
         <li className={` ${activeSection === 'vdsc' ? 'active' : ''}`}>
           <Link
             href='#vdsc'
-            className={`nav-item ${activeSection === 'vdsc' ? 'active' : ''}`}>
+            className={`nav-item ${activeSection === 'vdsc' ? 'active' : ''}`}
+          >
             {t('Vdsc')}
           </Link>
         </li>
@@ -103,12 +110,16 @@ const Nav = () => {
           <Link
             href='https://voltinu.in/voltinu_dashboard/index.html'
             className='nav-item'
-            target='_blank'>
+            target='_blank'
+          >
             {t('Dashboard')}
           </Link>
         </li>
         <li>
-          <ButtonNeon text='VoltiCard' href={'https://volticard.net/'} />
+          <ButtonNeon
+            text='VoltiCard'
+            href={'https://volticard.net/'}
+          />
         </li>
       </ul>
     </nav>
