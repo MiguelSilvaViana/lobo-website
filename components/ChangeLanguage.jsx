@@ -70,7 +70,8 @@ const ChangeLanguage = () => {
     <div className='flex flex-col min-w-[150px] xl:min-w-[180px] items-center relative py-2  rounded'>
       <button
         className='flex items-center justify-center text-base text-white rounded gap-x-2 xl:gap-x-4'
-        onClick={() => setIsOpen(!isOpen)}>
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <p className='order-2 text-xs font-semibold xl:order-none sm:text-base'>
           {selectedLanguage.name}
         </p>
@@ -85,13 +86,13 @@ const ChangeLanguage = () => {
             priority={true}
           />
         </div>
-        <div className='order-3 xl:order-none'>
+        {/* <div className='order-3 xl:order-none'>
           {!isOpen ? (
             <ChevronDown className='w-4 h-4 text-gray-200 sm:w-5 sm:h-5' />
           ) : (
             <ChevronUp className='w-4 h-4 text-gray-200 sm:w-5 sm:h-5' />
           )}
-        </div>
+        </div> */}
       </button>
 
       {isOpen && (
@@ -100,8 +101,9 @@ const ChangeLanguage = () => {
             return (
               <button
                 key={index}
-                className='relative flex items-center justify-between text-base transition-all duration-300 2xl:text-lg text-white/70 gap-x-2 2xl:gap-x-4 hover:text-white group'
-                onClick={() => handleLanguageChange(item)}>
+                className='relative flex items-center justify-between text-base transition-all duration-300 2xl:text-base text-white/70 gap-x-2 2xl:gap-x-4 hover:text-white group'
+                onClick={() => handleLanguageChange(item)}
+              >
                 {item.name}
                 <Image
                   src={item.src}
@@ -127,7 +129,8 @@ const ChevronDown = (props) => {
       fill='none'
       viewBox='0 0 24 24'
       strokeWidth={1.5}
-      stroke='currentColor'>
+      stroke='currentColor'
+    >
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
@@ -145,7 +148,8 @@ const ChevronUp = (props) => {
       fill='none'
       viewBox='0 0 24 24'
       strokeWidth={1.5}
-      stroke='currentColor'>
+      stroke='currentColor'
+    >
       <path
         strokeLinecap='round'
         strokeLinejoin='round'
